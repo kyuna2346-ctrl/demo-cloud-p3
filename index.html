@@ -1,0 +1,37 @@
+<?php
+include "koneksi.php";
+
+$Nama       = $_POST['Nama_Mahasiswa'];
+$Npm        = $_POST['Npm_Mahasiswa'];
+$Jurusan    = $_POST['Jurusan'];
+$Angkatan   = $_POST['Angkatan'];
+
+$query = mysqli_query($koneksi, "INSERT INTO akademik VALUES(
+    '',
+    '$Nama',
+    '$Npm',
+    '$Jurusan',
+    '$Angkatan'
+")
+
+if($query){
+
+    echo "
+    <script>
+    alert('Data berhasil disimpan')
+    window.location='index,php';
+    </script>
+    ";
+
+}else{
+
+    echo "
+    <script>
+    alert('Data gagal disimpan')
+    window.location='index,php';
+    </script>
+    ";
+
+}   
+
+?>
